@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% if is_logged_in %}
+    <h2>{{username}} logged in</h2>
+
+    <h2> Available fruits are</h2>
+    <ul>
+        {% for items in fruits %}
+        <li>{{items}}</li>
+        {% empty %}
+        <li>No fruits</li>
+        {% endfor %}
+    </ul>
+    
+
+    
+    {% else %}
+    <h2>Please login to the web page and the url is <a href='login'>Login</a></h2>
+    {% endif %}
+
+</body>
+</html>
+
