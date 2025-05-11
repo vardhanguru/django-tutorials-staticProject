@@ -23,9 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-6qiq=5)xb^k-jd1es^*_!@kbs%9d^spf8eg6(jkogli0m-7yxj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['django-tutorials-staticproject.onrender.com']
 
 
 # Application definition
@@ -117,6 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 import os
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # STATIC_DIR=os.path.join(BASE_DIR,'static') 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR/'static']
